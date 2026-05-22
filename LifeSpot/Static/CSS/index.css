@@ -83,3 +83,96 @@ footer {
     padding-left: 1%;
     padding-top: 1%;
 }
+
+.slider {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, .45);
+    user-select: none;
+}
+
+.slider-track {
+    display: flex;
+    gap: 12px;
+    padding: 12px;
+    transition: transform 0.4s cubic-bezier(.25,.1,.25,1);
+    cursor: grab;
+}
+
+.slider-track.dragging {
+    transition: none;
+    cursor: grabbing;
+}
+
+.slider-slide {
+    min-width: calc(100% - 24px);
+    border-radius: 12px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.slider-slide img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, .35);
+}
+
+.slider-btn-prev {
+    left: 14px;
+}
+
+.slider-btn-next {
+    right: 14px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    background: rgba(0, 0, 0, .35);
+}
+
+.slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    background: transparent;
+    cursor: pointer;
+    transition: background .25s, transform .25s;
+}
+
+.slider-dot.active {
+    background: #fff;
+    transform: scale(1.3);
+}
